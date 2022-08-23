@@ -8,6 +8,7 @@ public class CubeTest
     [Theory]
     public void TestCube(double side)
     {
-        throw new System.NotImplementedException();
+        var instance = new Cube(side);
+        instance.Side.Should().Be(side);
     }
 }
