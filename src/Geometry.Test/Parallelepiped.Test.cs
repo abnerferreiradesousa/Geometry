@@ -7,6 +7,9 @@ public class ParallelepipedTest
     [Theory]
     public void TestParallelepiped(double height, double width, double depth)
     {
-        throw new System.NotImplementedException();
+        var instance = new Parallelepiped(width, height, depth);
+        instance.Depth.Should().Be(depth);
+        instance.Width.Should().Be(width);
+        instance.Height.Should().Be(height);
     }
 }
