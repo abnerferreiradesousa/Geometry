@@ -8,6 +8,10 @@ public class SquareTest
     [Theory]
     public void TestSquare(double side)
     {
-        throw new System.NotImplementedException();
+        var instance = new Square(side);
+        instance.Width.Should().Be(side);
+        instance.Height.Should().Be(side);
+        // instance.Area.Should().Be(expectedArea);
+        // instance.Perimeter.Should().Be(expectedPerimeter);
     }
 }

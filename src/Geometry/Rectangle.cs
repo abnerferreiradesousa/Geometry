@@ -16,11 +16,18 @@ public class Rectangle
 
   public Rectangle(double width, double height) 
   {
-    if(width < 0 || height < 0) 
+    try 
     {
-      throw new ArgumentException("All sides must be greater than zero");
+      if(width <= 0 || height <= 0) 
+      {
+        throw new ArgumentException("All sides must be greater than zero");
+      }
+      Width = width;
+      Height = height;
     }
-    Width = width;
-    Height = height;
+    catch(ArgumentException ex)
+    {
+      throw ex;
+    }
   }
 }
