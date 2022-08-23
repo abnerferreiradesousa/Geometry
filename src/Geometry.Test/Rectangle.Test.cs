@@ -7,7 +7,9 @@ public class RectangleTest
     [Theory]
     public void TestRectangle(double sideA, double sideB)
     {
-        throw new System.NotImplementedException();
+        var instance = new Rectangle(sideA, sideB);
+        instance.Width.Should().Be(sideA);
+        instance.Height.Should().Be(sideB);
     }
 
     [InlineData(0, 4)]
@@ -17,6 +19,7 @@ public class RectangleTest
     [Theory]
     public void TestRectangleNonPositiveSideException(double sideA, double sideB)
     {
-        throw new System.NotImplementedException();
+        Action act = () => new Rectangle(sideA, sideB);
+        act.Should().Throw<ArgumentException>().WithMessage("All sides must be greater than zero");
     }
 }
